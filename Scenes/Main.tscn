@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_idj7w"]
 [ext_resource type="Script" path="res://Scripts/label.gd" id="2_kln2b"]
 [ext_resource type="Script" path="res://Scripts/button.gd" id="2_rgh2o"]
+[ext_resource type="Script" uid="uid://cm7q361iaq3q1" path="res://Scripts/listStat.gd" id="3_listst"]
 [ext_resource type="Script" path="res://Scripts/button_upp_idle.gd" id="4_rgh2o"]
 [ext_resource type="Script" path="res://Scripts/button_upp_click.gd" id="5_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://cge6os48vo14u" path="res://Scenes/background.tscn" id="6_v1gob"]
@@ -46,6 +47,34 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_kln2b")
 metadata/_edit_use_anchors_ = true
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer" unique_id=325402615]
+offset_left = 983.0
+offset_top = 494.0
+offset_right = 1151.0
+offset_bottom = 646.0
+tab_alignment = 1
+current_tab = 0
+script = ExtResource("3_listst")
+
+[node name="Statistiques" type="VBoxContainer" parent="CanvasLayer/TabContainer" unique_id=229079137]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="HP" type="Label" parent="CanvasLayer/TabContainer/Statistiques" unique_id=1355302414]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Attaque" type="Label" parent="CanvasLayer/TabContainer/Statistiques" unique_id=178179328]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Défense" type="Label" parent="CanvasLayer/TabContainer/Statistiques" unique_id=1833467842]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ButtonUppIdle" type="Button" parent="CanvasLayer" unique_id=463472120]
 custom_minimum_size = Vector2(150, 50)
