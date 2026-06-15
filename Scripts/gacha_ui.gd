@@ -1,22 +1,35 @@
 extends Control
 
-@onready var gems_label = $VBoxContainer/GemsLabel
-@onready var pull_button = $VBoxContainer/PullButton
-@onready var result_label = $VBoxContainer/ResultLabel
+@onready var gems_label = $VBoxContainer/ColorRect/GemsLabel
+@onready var pull_button = $VBoxContainer/ColorRect/PullButton
+@onready var result_label = $VBoxContainer/ColorRect/ResultLabel
+@onready var grid = $VBoxContainer/ScrollContainer/GridContainer
+
+const SkinCard = preload("res://Scenes/SkinCard.tscn")
 
 const RARITY_COLORS = {
-	"Common":  Color.WHITE,
-	"Uncommun":  Color(0.3, 0.8, 0.3),      # vert — Uncommon
-	"Rare":  Color(0.3, 0.6, 1.0),      # bleu — Rare
-	"Epic":  Color(0.7, 0.3, 1.0),      # violet — Epic
-	"Legendary":  Color(1.0, 0.7, 0.0),      # doré — Legendary
-	"FrenchMonster": Color(1.0, 0.1, 0.1),      # rouge vif — FrenchMonster
+	"Common":       Color.WHITE,
+	"Uncommun":     Color(0.3, 0.8, 0.3),
+	"Rare":         Color(0.3, 0.6, 1.0),
+	"Epic":         Color(0.7, 0.3, 1.0),
+	"Legendary":    Color(1.0, 0.7, 0.0),
+	"FrenchMonster":Color(1.0, 0.1, 0.1),
 }
 
 func _ready():
 	GachaManager.gems_changed.connect(_on_gems_changed)
 	GachaManager.pull_done.connect(_on_pull_done)
-	GachaManager.add_gems(5000)  # gems de départ pour tester
+	pull_button.pressed.connect(_on_pull_button_pressed)
+	GachaManager.add_gems(5000)
+	_refresh_collection()
+
+func _refresh_collection():
+	for child in grid.get_children():
+		child.queue_free()
+	for character in GachaManager.CHARACTERS:
+		var card = SkinCard.instantiate()
+		grid.add_child(card)
+		card.setup(character)
 
 func _on_pull_button_pressed():
 	var result = GachaManager.pull()
@@ -27,6 +40,7 @@ func _on_pull_button_pressed():
 func _on_pull_done(character: Dictionary):
 	result_label.text = "[%s] %s" % [character["rarity"], character["name"]]
 	result_label.modulate = RARITY_COLORS[character["rarity"]]
+	_refresh_collection()
 
 func _on_gems_changed(amount: int):
 	gems_label.text = "Gems : %d" % amount
