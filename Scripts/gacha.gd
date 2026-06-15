@@ -6,12 +6,12 @@ const PULL_COST: int = 10
 
 # Définition des personnages par rareté
 const CHARACTERS = [
-	{ "name": "Goblin",   "rarity": "C", "weight": 60 },
-	{ "name": "Archer",   "rarity": "C", "weight": 60 },
-	{ "name": "Knight",   "rarity": "B", "weight": 25 },
-	{ "name": "Mage",     "rarity": "B", "weight": 25 },
-	{ "name": "Dragon",   "rarity": "A", "weight": 8  },
-	{ "name": "Phoenix",  "rarity": "S", "weight": 2  },
+	{ "name": "Goblin",   "rarity": "Common", "weight": 60 },
+	{ "name": "Archer",   "rarity": "Common", "weight": 60 },
+	{ "name": "Knight",   "rarity": "Uncommun", "weight": 25 },
+	{ "name": "Mage",     "rarity": "Rare", "weight": 25 },
+	{ "name": "Dragon",   "rarity": "Legendary", "weight": 8  },
+	{ "name": "Phoenix",  "rarity": "FrenchMonster", "weight": 2  },
 ]
 
 # Collection du joueur : { "nom": nombre_possédé }

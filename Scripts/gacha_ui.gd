@@ -5,16 +5,18 @@ extends Control
 @onready var result_label = $VBoxContainer/ResultLabel
 
 const RARITY_COLORS = {
-	"C": Color.WHITE,
-	"B": Color(0.3, 0.6, 1.0),    # bleu
-	"A": Color(1.0, 0.7, 0.0),    # doré
-	"S": Color(1.0, 0.3, 1.0),    # violet
+	"Common":  Color.WHITE,
+	"Uncommun":  Color(0.3, 0.8, 0.3),      # vert — Uncommon
+	"Rare":  Color(0.3, 0.6, 1.0),      # bleu — Rare
+	"Epic":  Color(0.7, 0.3, 1.0),      # violet — Epic
+	"Legendary":  Color(1.0, 0.7, 0.0),      # doré — Legendary
+	"FrenchMonster": Color(1.0, 0.1, 0.1),      # rouge vif — FrenchMonster
 }
 
 func _ready():
 	GachaManager.gems_changed.connect(_on_gems_changed)
 	GachaManager.pull_done.connect(_on_pull_done)
-	GachaManager.add_gems(50)  # gems de départ pour tester
+	GachaManager.add_gems(5000)  # gems de départ pour tester
 
 func _on_pull_button_pressed():
 	var result = GachaManager.pull()
