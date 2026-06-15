@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://co1x5tdqs8qwu"]
+
+[ext_resource type="Texture2D" uid="uid://llhitac4mek2" path="res://assets/floor.png" id="1_vrfip"]
+[ext_resource type="Texture2D" uid="uid://cvhmfhttd53at" path="res://assets/serpent-corps.jpg" id="2_ye4ru"]
+
+[node name="Main" type="Node2D" unique_id=1936779480]
+
+[node name="Platform" type="Sprite2D" parent="." unique_id=364246200]
+position = Vector2(19, 29)
+scale = Vector2(0.21197091, 0.27709338)
+texture = ExtResource("1_vrfip")
+
+[node name="Player" type="Sprite2D" parent="." unique_id=347861428]
+position = Vector2(19, 24)
+scale = Vector2(0.029100511, 0.033730194)
+texture = ExtResource("2_ye4ru")
+flip_h = true
+
+[node name="Node2D" type="Node2D" parent="." unique_id=978900373]
+
+[node name="Enemy1" type="Sprite2D" parent="Node2D" unique_id=784846820]
+
+[node name="Enemy2" type="Sprite2D" parent="Node2D" unique_id=673876387]
