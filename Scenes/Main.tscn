@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/button_upp_click.gd" id="5_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://cge6os48vo14u" path="res://Scenes/background.tscn" id="6_v1gob"]
 [ext_resource type="PackedScene" path="res://Scenes/GachaUI.tscn" id="7_jw32o"]
+[ext_resource type="PackedScene" path="res://Scenes/BossUI.tscn" id="8_boss1"]
 
 [node name="Main" type="Node2D" unique_id=1249350998]
 position = Vector2(452, 224)
@@ -99,9 +100,11 @@ offset_right = 150.0
 text = "Améliorer Idle"
 script = ExtResource("5_pbw6q")
 
+[node name="GachaUi" parent="CanvasLayer" unique_id=627056621 instance=ExtResource("7_jw32o")]
+
+[node name="BossUi" parent="CanvasLayer" unique_id=929737559 instance=ExtResource("8_boss1")]
+
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=738291847]
 layer = -1
 
 [node name="Background" parent="BackgroundLayer" unique_id=938921807 instance=ExtResource("6_v1gob")]
-
-[node name="GachaUi" parent="CanvasLayer" unique_id=627056621 instance=ExtResource("7_jw32o")]
