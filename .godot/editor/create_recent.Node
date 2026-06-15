@@ -1,8 +1,5 @@
-Label
-VBoxContainer
-TabContainer
-ItemList
 Button
+Label
 CanvasLayer
 Node
 MeshInstance2D
