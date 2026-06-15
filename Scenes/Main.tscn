@@ -1,3 +1,33 @@
 [gd_scene format=3 uid="uid://b4o480kiumhhj"]
 
+[ext_resource type="Script" uid="uid://bugott2csejag" path="res://Scenes/GameManager.gd" id="1_idj7w"]
+[ext_resource type="Script" uid="uid://buwe6edoa38so" path="res://Scenes/label.gd" id="2_kln2b"]
+[ext_resource type="Script" uid="uid://vjtwj8505nt8" path="res://Scenes/button.gd" id="2_rgh2o"]
+
 [node name="Main" type="Node2D" unique_id=1249350998]
+position = Vector2(452, 224)
+
+[node name="GameManager" type="Node" parent="." unique_id=2038496110]
+script = ExtResource("1_idj7w")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=544584215]
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=1183886952]
+offset_left = 447.0
+offset_top = 252.0
+offset_right = 566.0
+offset_bottom = 283.0
+text = "Ajouter moula"
+script = ExtResource("2_rgh2o")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1017743791]
+anchors_preset = -1
+anchor_right = 0.072916664
+anchor_bottom = 0.047839507
+offset_left = 433.0
+offset_top = 147.0
+offset_right = 473.0
+offset_bottom = 170.0
+script = ExtResource("2_kln2b")
+metadata/_edit_use_anchors_ = true
