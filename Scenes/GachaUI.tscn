@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bctnubdqk1sl0"]
 
 [ext_resource type="Script" uid="uid://cdtxvk1sttfy5" path="res://Scripts/gacha_ui.gd" id="1_8kui5"]
+[ext_resource type="Script" uid="uid://bb75esr53sdgo" path="res://Scripts/button_go_to_main.gd" id="2_xwc5u"]
 
-[node name="GachaUi" type="Control" unique_id=627056621]
+[node name="GachaUi" type="Control" unique_id=1466445124]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,19 +12,71 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8kui5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=606243086]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=420359632]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="GemsLabel" type="Label" parent="VBoxContainer" unique_id=234113938]
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer" unique_id=251151862]
+custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
+size_flags_vertical = 0
+color = Color(0.6028429, 0.6028429, 0.602843, 1)
 
-[node name="PullButton" type="Button" parent="VBoxContainer" unique_id=1979524365]
-layout_mode = 2
+[node name="ButtonGoToMain" type="Button" parent="VBoxContainer/ColorRect" unique_id=1114176798]
+custom_minimum_size = Vector2(100, 25)
+layout_mode = 1
+offset_right = 100.0
+offset_bottom = 31.0
+size_flags_horizontal = 0
+text = "Go to main"
+script = ExtResource("2_xwc5u")
+
+[node name="ResultLabel" type="Label" parent="VBoxContainer/ColorRect" unique_id=2144512603]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 25.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "			"
+
+[node name="PullButton" type="Button" parent="VBoxContainer/ColorRect" unique_id=1979524365]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 4
 text = "Invoquer (10 robux)"
+autowrap_trim_flags = 192
 
-[node name="ResultLabel" type="Label" parent="VBoxContainer" unique_id=2144512603]
+[node name="GemsLabel" type="Label" parent="VBoxContainer/ColorRect" unique_id=234113938]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -400.0
+offset_bottom = 25.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=1374164394]
 layout_mode = 2
+size_flags_vertical = 3
 
-[connection signal="pressed" from="VBoxContainer/PullButton" to="." method="_on_pull_button_pressed"]
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/ScrollContainer" unique_id=924665220]
+layout_mode = 2
+columns = 3

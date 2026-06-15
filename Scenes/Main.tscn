@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://vjtwj8505nt8" path="res://Scripts/button.gd" id="2_rgh2o"]
 [ext_resource type="Script" uid="uid://b15kwqfo8jd8p" path="res://Scripts/button_upp_idle.gd" id="4_rgh2o"]
 [ext_resource type="Script" uid="uid://bj5ll5xomockr" path="res://Scripts/button_upp_click.gd" id="5_pbw6q"]
+[ext_resource type="Script" uid="uid://b66di3dhxg6yt" path="res://Scripts/button_go_to_gacha.gd" id="6_v1gob"]
 
 [node name="Main" type="Node2D" unique_id=1249350998]
 position = Vector2(452, 224)
@@ -67,3 +68,15 @@ offset_top = -50.0
 offset_right = 150.0
 text = "Améliorer Idle"
 script = ExtResource("5_pbw6q")
+
+[node name="ButtonGoToGacha" type="Button" parent="CanvasLayer" unique_id=1317442094]
+custom_minimum_size = Vector2(100, 25)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -103.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Go to Gacha
+"
+script = ExtResource("6_v1gob")

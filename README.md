@@ -11,7 +11,7 @@
 3. **Upgrade Your Stats** — Spend your stats currency to grow stronger.
 4. **Fight the Boss** — Once you're strong enough, take on the boss. Boss levels scale exponentially.
 5. **Earn Pull Currency** — Defeating a boss rewards you with gacha pull currency.
-6. **Pull Characters** — Use pull currency in the gacha system to unlock characters and bonuses.
+6. **Pull Characters** — Use pull currency in the gacha system to unlock skins and bonuses.
 7. **Repeat** — Loop back and get stronger each time.
 
 ---
