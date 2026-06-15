@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://b4o480kiumhhj"]
 
-[ext_resource type="Script" uid="uid://bugott2csejag" path="res://Scripts/GameManager.gd" id="1_idj7w"]
 [ext_resource type="Script" path="res://Scripts/label.gd" id="2_kln2b"]
 [ext_resource type="Script" path="res://Scripts/button.gd" id="2_rgh2o"]
 [ext_resource type="Script" uid="uid://cm7q361iaq3q1" path="res://Scripts/listStat.gd" id="3_listst"]
@@ -17,50 +16,13 @@
 [node name="Main" type="Node2D" unique_id=1249350998]
 position = Vector2(452, 224)
 
-[node name="GameManager" type="Node" parent="." unique_id=2038496110]
-script = ExtResource("1_idj7w")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=544584215]
 
-[node name="IdleButton" type="Button" parent="CanvasLayer" unique_id=1183886952]
-custom_minimum_size = Vector2(350, 75)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -125.0
-offset_top = -37.5
-offset_right = 125.0
-offset_bottom = 37.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Cliquez pour argent !"
-script = ExtResource("2_rgh2o")
-metadata/_edit_use_anchors_ = true
-
-[node name="Moula_value" type="Label" parent="CanvasLayer" unique_id=1017743791]
-custom_minimum_size = Vector2(300, 50)
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -0.5
-offset_right = 0.5
-offset_bottom = 23.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 3
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("2_kln2b")
-metadata/_edit_use_anchors_ = true
-
 [node name="TabContainer" type="TabContainer" parent="CanvasLayer" unique_id=325402615]
-offset_left = 983.0
-offset_top = 494.0
-offset_right = 1151.0
-offset_bottom = 646.0
+offset_left = 948.0
+offset_top = 472.0
+offset_right = 1116.0
+offset_bottom = 624.0
 tab_alignment = 1
 current_tab = 0
 script = ExtResource("3_listst")
@@ -124,32 +86,66 @@ script = ExtResource("5_pbw6q")
 [node name="BossUi" parent="CanvasLayer" unique_id=929737559 instance=ExtResource("8_boss1")]
 
 [node name="ButtonAttaque" type="Button" parent="CanvasLayer" unique_id=1000475071]
-offset_left = 3.0
-offset_top = 55.0
-offset_right = 11.0
-offset_bottom = 63.0
+offset_left = 18.0
+offset_top = 575.0
+offset_right = 26.0
+offset_bottom = 583.0
 script = ExtResource("9_frkhe")
 
 [node name="ButtonDefense" type="Button" parent="CanvasLayer" unique_id=24605850]
-offset_left = 3.0
-offset_top = 45.0
-offset_right = 11.0
-offset_bottom = 53.0
+offset_left = 19.0
+offset_top = 495.0
+offset_right = 27.0
+offset_bottom = 503.0
 script = ExtResource("10_1p5hy")
 
 [node name="ButtonHp" type="Button" parent="CanvasLayer" unique_id=825529926]
-offset_left = 3.0
-offset_top = 24.0
-offset_right = 11.0
-offset_bottom = 32.0
+offset_left = 19.0
+offset_top = 342.0
+offset_right = 27.0
+offset_bottom = 350.0
 script = ExtResource("11_h1m7h")
 
 [node name="ButtonEsquive" type="Button" parent="CanvasLayer" unique_id=2121783927]
-offset_left = 3.0
-offset_top = 34.0
-offset_right = 11.0
-offset_bottom = 42.0
+offset_left = 20.0
+offset_top = 419.0
+offset_right = 28.0
+offset_bottom = 427.0
 script = ExtResource("12_erwvk")
+
+[node name="IdleButton" type="Button" parent="CanvasLayer" unique_id=1183886952]
+custom_minimum_size = Vector2(350, 75)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -37.5
+offset_right = 175.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Cliquez pour argent !"
+script = ExtResource("2_rgh2o")
+metadata/_edit_use_anchors_ = true
+
+[node name="Moula_value" type="Label" parent="CanvasLayer" unique_id=1017743791]
+custom_minimum_size = Vector2(300, 50)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_right = 150.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_kln2b")
+metadata/_edit_use_anchors_ = true
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=738291847]
 layer = -1
