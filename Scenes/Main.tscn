@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b4o480kiumhhj"]
 
-[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_idj7w"]
+[ext_resource type="Script" uid="uid://bugott2csejag" path="res://Scripts/GameManager.gd" id="1_idj7w"]
 [ext_resource type="Script" path="res://Scripts/label.gd" id="2_kln2b"]
 [ext_resource type="Script" path="res://Scripts/button.gd" id="2_rgh2o"]
 [ext_resource type="Script" uid="uid://cm7q361iaq3q1" path="res://Scripts/listStat.gd" id="3_listst"]
@@ -8,7 +8,11 @@
 [ext_resource type="Script" path="res://Scripts/button_upp_click.gd" id="5_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://cge6os48vo14u" path="res://Scenes/background.tscn" id="6_v1gob"]
 [ext_resource type="PackedScene" path="res://Scenes/GachaUI.tscn" id="7_jw32o"]
-[ext_resource type="PackedScene" path="res://Scenes/BossUI.tscn" id="8_boss1"]
+[ext_resource type="PackedScene" uid="uid://dfm70mf3qtc2e" path="res://Scenes/BossUI.tscn" id="8_boss1"]
+[ext_resource type="Script" uid="uid://c8oy70fqu22bn" path="res://Scripts/button_upp_attack.gd" id="9_frkhe"]
+[ext_resource type="Script" uid="uid://b74v6kbf28j5h" path="res://Scripts/button_upp_defense.gd" id="10_1p5hy"]
+[ext_resource type="Script" uid="uid://csqcya5fpvv0v" path="res://Scripts/button_upp_hp.gd" id="11_h1m7h"]
+[ext_resource type="Script" uid="uid://c25ksxrt1o2rb" path="res://Scripts/button_upp_evasion.gd" id="12_erwvk"]
 
 [node name="Main" type="Node2D" unique_id=1249350998]
 position = Vector2(452, 224)
@@ -44,6 +48,9 @@ offset_left = -0.5
 offset_right = 0.5
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_kln2b")
@@ -64,18 +71,30 @@ metadata/_tab_index = 0
 
 [node name="HP" type="Label" parent="CanvasLayer/TabContainer/Statistiques" unique_id=1355302414]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Attaque" type="Label" parent="CanvasLayer/TabContainer/Statistiques" unique_id=178179328]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Défense" type="Label" parent="CanvasLayer/TabContainer/Statistiques" unique_id=1833467842]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Esquive" type="Label" parent="CanvasLayer/TabContainer/Statistiques" unique_id=412850136]
+layout_mode = 2
 
 [node name="ButtonUppIdle" type="Button" parent="CanvasLayer" unique_id=463472120]
 custom_minimum_size = Vector2(150, 50)
@@ -103,6 +122,34 @@ script = ExtResource("5_pbw6q")
 [node name="GachaUi" parent="CanvasLayer" unique_id=627056621 instance=ExtResource("7_jw32o")]
 
 [node name="BossUi" parent="CanvasLayer" unique_id=929737559 instance=ExtResource("8_boss1")]
+
+[node name="ButtonAttaque" type="Button" parent="CanvasLayer" unique_id=1000475071]
+offset_left = 3.0
+offset_top = 55.0
+offset_right = 11.0
+offset_bottom = 63.0
+script = ExtResource("9_frkhe")
+
+[node name="ButtonDefense" type="Button" parent="CanvasLayer" unique_id=24605850]
+offset_left = 3.0
+offset_top = 45.0
+offset_right = 11.0
+offset_bottom = 53.0
+script = ExtResource("10_1p5hy")
+
+[node name="ButtonHp" type="Button" parent="CanvasLayer" unique_id=825529926]
+offset_left = 3.0
+offset_top = 24.0
+offset_right = 11.0
+offset_bottom = 32.0
+script = ExtResource("11_h1m7h")
+
+[node name="ButtonEsquive" type="Button" parent="CanvasLayer" unique_id=2121783927]
+offset_left = 3.0
+offset_top = 34.0
+offset_right = 11.0
+offset_bottom = 42.0
+script = ExtResource("12_erwvk")
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=738291847]
 layer = -1
