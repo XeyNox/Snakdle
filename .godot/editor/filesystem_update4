@@ -1,4 +1,4 @@
 res://Scenes/Main.tscn
-res://Scenes/GameManager.gd
-res://Scenes/label.gd
-res://Scenes/button.gd
+res://Scripts/gacha.gd
+res://Scripts/gacha_ui.gd
+res://Scenes/GachaUI.tscn
