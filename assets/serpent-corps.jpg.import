@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dijtaw8wlesgb"
-path="res://.godot/imported/seamless-textured-grass-natural-grass-pattern.png-5adfb1c64324e7fe9f886d501432ccc3.ctex"
+uid="uid://cvhmfhttd53at"
+path="res://.godot/imported/serpent-corps.jpg-c3ad7fa4ecb504749447954f5eac609c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://seamless-textured-grass-natural-grass-pattern.png"
-dest_files=["res://.godot/imported/seamless-textured-grass-natural-grass-pattern.png-5adfb1c64324e7fe9f886d501432ccc3.ctex"]
+source_file="res://assets/serpent-corps.jpg"
+dest_files=["res://.godot/imported/serpent-corps.jpg-c3ad7fa4ecb504749447954f5eac609c.ctex"]
 
 [params]
 
