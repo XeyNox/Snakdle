@@ -70,9 +70,9 @@ offset_right = 150.0
 text = "Améliorer Idle"
 script = ExtResource("5_pbw6q")
 
+[node name="GachaUi" parent="CanvasLayer" unique_id=627056621 instance=ExtResource("7_jw32o")]
+
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=738291847]
 layer = -1
 
 [node name="Background" parent="BackgroundLayer" unique_id=938921807 instance=ExtResource("6_v1gob")]
-
-[node name="GachaUi" parent="CanvasLayer" unique_id=627056621 instance=ExtResource("7_jw32o")]
