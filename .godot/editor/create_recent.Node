@@ -2,6 +2,7 @@ Node2D
 TextureRect
 Label
 Button
+VBoxContainer
 CanvasLayer
 Node
 MeshInstance2D
