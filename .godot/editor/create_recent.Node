@@ -1,4 +1,7 @@
 Label
+VBoxContainer
+TabContainer
+ItemList
 Button
 CanvasLayer
 Node

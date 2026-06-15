@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bugott2csejag" path="res://Scenes/GameManager.gd" id="1_idj7w"]
 [ext_resource type="Script" uid="uid://buwe6edoa38so" path="res://Scenes/label.gd" id="2_kln2b"]
 [ext_resource type="Script" uid="uid://vjtwj8505nt8" path="res://Scenes/button.gd" id="2_rgh2o"]
+[ext_resource type="Script" uid="uid://cm7q361iaq3q1" path="res://Scripts/listStat.gd" id="4_rgh2o"]
 
 [node name="Main" type="Node2D" unique_id=1249350998]
 position = Vector2(452, 224)
@@ -31,3 +32,31 @@ offset_right = 473.0
 offset_bottom = 170.0
 script = ExtResource("2_kln2b")
 metadata/_edit_use_anchors_ = true
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer" unique_id=325402615]
+offset_left = 983.0
+offset_top = 494.0
+offset_right = 1151.0
+offset_bottom = 646.0
+tab_alignment = 1
+current_tab = 0
+script = ExtResource("4_rgh2o")
+
+[node name="Statistiques" type="VBoxContainer" parent="CanvasLayer/TabContainer" unique_id=229079137]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="HP" type="Label" parent="CanvasLayer/TabContainer/Statistiques" unique_id=1355302414]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Attaque" type="Label" parent="CanvasLayer/TabContainer/Statistiques" unique_id=178179328]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Défense" type="Label" parent="CanvasLayer/TabContainer/Statistiques" unique_id=1833467842]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
