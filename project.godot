@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*uid://bugott2csejag"
-GachaManager="*uid://c4hobbb6eqnyk"
 
 [physics]
 
