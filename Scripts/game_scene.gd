@@ -8,8 +8,11 @@ func _ready() -> void:
 	GameManager.boss_started.connect(_on_boss_started)
 	GameManager.boss_defeated.connect(_on_boss_defeated)
 	GameManager.player_died.connect(_on_player_died)
+	GachaManager.skin_equipped.connect(_on_skin_equipped)
 	boss.visible = false
 	_pick_next_target()
+	if GachaManager.equipped_skin != "":
+		_apply_skin(GachaManager.equipped_skin)
 	
 func _pick_next_target() -> void:
 	var vp := get_viewport_rect().size
@@ -50,3 +53,14 @@ func _on_player_died() -> void:
 func _play(sprite: AnimatedSprite2D, anim: String) -> void:
 	if sprite.sprite_frames != null and sprite.sprite_frames.has_animation(anim):
 		sprite.play(anim)
+
+func _on_skin_equipped(skin_name: String) -> void:
+	_apply_skin(skin_name)
+
+func _apply_skin(skin_name: String) -> void:
+	for character in GachaManager.CHARACTERS:
+		if character["name"] == skin_name:
+			var tex = load(character["image"])
+			if tex:
+				snake.texture = tex
+			break
