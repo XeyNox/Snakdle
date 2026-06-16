@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvo1gkc4o8otx"
-path="res://.godot/imported/chad-enemy.jpg-85191515af47155fc20519b57fa3834a.ctex"
+uid="uid://coowwq6sba54l"
+path="res://.godot/imported/serpent_gold.png-2d58b7c6861601f0abd9a65c9e71f0d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/chad-enemy.jpg"
-dest_files=["res://.godot/imported/chad-enemy.jpg-85191515af47155fc20519b57fa3834a.ctex"]
+source_file="res://assets/serpent_gold.png"
+dest_files=["res://.godot/imported/serpent_gold.png-2d58b7c6861601f0abd9a65c9e71f0d4.ctex"]
 
 [params]
 

@@ -15,6 +15,17 @@ layer = -1
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1039008515]
 
 [node name="TitleLabel" type="Label" parent="CanvasLayer" unique_id=1808797131]
+[node name="TitleScreen" type="Node2D" unique_id=2021436711]
+script = ExtResource("2_ts")
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=732468764]
+layer = -1
+
+[node name="Background" parent="BackgroundLayer" unique_id=1175774752 instance=ExtResource("1_bg")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1979871762]
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer" unique_id=2038714095]
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
@@ -23,11 +34,13 @@ offset_top = 60.0
 offset_right = 150.0
 offset_bottom = 130.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
 text = "Snakdle"
 horizontal_alignment = 1
 
 [node name="SubtitleLabel" type="Label" parent="CanvasLayer" unique_id=1366853953]
+[node name="SubtitleLabel" type="Label" parent="CanvasLayer" unique_id=1939876507]
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
@@ -40,6 +53,7 @@ theme_override_font_sizes/font_size = 28
 horizontal_alignment = 1
 
 [node name="PlayButton" type="Button" parent="CanvasLayer" unique_id=462267062]
+[node name="PlayButton" type="Button" parent="CanvasLayer" unique_id=1045105973]
 custom_minimum_size = Vector2(200, 60)
 anchors_preset = 8
 anchor_left = 0.5
@@ -55,6 +69,7 @@ grow_vertical = 2
 text = "Jouer"
 
 [node name="SettingsButton" type="Button" parent="CanvasLayer" unique_id=1844114942]
+[node name="SettingsButton" type="Button" parent="CanvasLayer" unique_id=1771841978]
 custom_minimum_size = Vector2(150, 45)
 anchors_preset = -1
 anchor_top = 1.0
@@ -66,6 +81,7 @@ offset_bottom = -20.0
 text = "Paramètres"
 
 [node name="SettingsPanel" type="PanelContainer" parent="CanvasLayer" unique_id=1919870632]
+[node name="SettingsPanel" type="PanelContainer" parent="CanvasLayer" unique_id=1965866390]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -88,6 +104,14 @@ layout_mode = 2
 text = "Volume musique"
 
 [node name="MusicSlider" type="HSlider" parent="CanvasLayer/SettingsPanel/VBoxContainer" unique_id=1404458970]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/SettingsPanel" unique_id=1391241402]
+layout_mode = 2
+
+[node name="MusicLabel" type="Label" parent="CanvasLayer/SettingsPanel/VBoxContainer" unique_id=404308210]
+layout_mode = 2
+text = "Volume musique"
+
+[node name="MusicSlider" type="HSlider" parent="CanvasLayer/SettingsPanel/VBoxContainer" unique_id=1237275085]
 custom_minimum_size = Vector2(280, 30)
 layout_mode = 2
 max_value = 1.0
@@ -99,6 +123,11 @@ layout_mode = 2
 text = "Volume sons"
 
 [node name="SoundSlider" type="HSlider" parent="CanvasLayer/SettingsPanel/VBoxContainer" unique_id=452816314]
+[node name="SoundLabel" type="Label" parent="CanvasLayer/SettingsPanel/VBoxContainer" unique_id=1229522766]
+layout_mode = 2
+text = "Volume sons"
+
+[node name="SoundSlider" type="HSlider" parent="CanvasLayer/SettingsPanel/VBoxContainer" unique_id=199896194]
 custom_minimum_size = Vector2(280, 30)
 layout_mode = 2
 max_value = 1.0
@@ -106,5 +135,6 @@ step = 0.01
 value = 1.0
 
 [node name="CloseButton" type="Button" parent="CanvasLayer/SettingsPanel/VBoxContainer" unique_id=1249173516]
+[node name="CloseButton" type="Button" parent="CanvasLayer/SettingsPanel/VBoxContainer" unique_id=884558207]
 layout_mode = 2
 text = "Fermer"

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dx5kavch408l4"]
+
+[ext_resource type="Script" uid="uid://vnkibtdquq2h" path="res://Scripts/floating_text.gd" id="1_hnnmh"]
+
+[node name="FloatingText" type="Label" unique_id=1003855542]
+script = ExtResource("1_hnnmh")

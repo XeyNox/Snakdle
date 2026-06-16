@@ -1,25 +1,9 @@
 [gd_scene format=3 uid="uid://cge6os48vo14u"]
 
 [ext_resource type="Script" uid="uid://8gdscm58a7u" path="res://Scripts/background.gd" id="1_sn1xx"]
+[ext_resource type="Script" uid="uid://dp561n3jt4ae8" path="res://Scripts/enemy_manager.gd" id="2_4aqey"]
 [ext_resource type="Script" uid="uid://b3ogajb1mincr" path="res://Scripts/game_scene.gd" id="2_gs"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_snake"]
-animations = [{
-"frames": [],
-"loop": true,
-"name": &"attack",
-"speed": 10.0
-}, {
-"frames": [],
-"loop": false,
-"name": &"hurt",
-"speed": 8.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"walk",
-"speed": 8.0
-}]
+[ext_resource type="Texture2D" uid="uid://da1jvj0drjk2p" path="res://assets/serpent_gris.png" id="4_xgxeb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_boss"]
 animations = [{
@@ -37,13 +21,16 @@ animations = [{
 [node name="Background" type="Node2D" unique_id=938921807]
 script = ExtResource("2_gs")
 
+[node name="EnemyManager" type="Node2D" parent="." unique_id=1425797215]
+script = ExtResource("2_4aqey")
+
 [node name="Fond" type="Node2D" parent="." unique_id=101010101]
 script = ExtResource("1_sn1xx")
 
-[node name="Snake" type="AnimatedSprite2D" parent="." unique_id=202020202]
+[node name="Snake" type="Sprite2D" parent="." unique_id=778248420]
 position = Vector2(200, 450)
-sprite_frames = SubResource("SpriteFrames_snake")
-animation = &"walk"
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_xgxeb")
 
 [node name="Boss" type="AnimatedSprite2D" parent="." unique_id=303030303]
 visible = false

@@ -14,10 +14,14 @@ func _process(_delta: float) -> void:
 	update_stats()
 
 func update_stats() -> void:
-	hp_label.text = "HP : %d / %d" % [GameManager.player_hp, GameManager.player_max_hp]
-	attaque_label.text = "Attaque : %.1f  (coût : %d)" % [GameManager.player_attack, GameManager.attack_upgrade_cost]
-	defense_label.text = "Défense : %.1f  (coût : %d)" % [GameManager.player_defense, GameManager.defense_upgrade_cost]
-	esquive_label.text = "Esquive : %d%%  (coût : %d)" % [int(GameManager.player_evasion * 100), GameManager.evasion_upgrade_cost]
+	var atq_bonus = GachaManager.get_bonus("atq")
+	var def_bonus = GachaManager.get_bonus("def")
+	var dodge_bonus = GachaManager.get_bonus("dodge")
+	var hp_bonus = GachaManager.get_bonus("hp")
+	hp_label.text = "HP : %d / %d" % [GameManager.player_hp, GameManager.player_max_hp + hp_bonus]
+	attaque_label.text = "Attaque : %.1f" % [GameManager.player_attack + atq_bonus]
+	defense_label.text = "Défense : %.1f" % [GameManager.player_defense + def_bonus]
+	esquive_label.text = "Esquive : %d%%" % [int((GameManager.player_evasion + dodge_bonus) * 100)]
 
 func _on_hp_changed(_hp: float, _max: float) -> void:
 	update_stats()

@@ -57,6 +57,8 @@ vertical_alignment = 1
 
 [node name="Esquive" type="Label" parent="CanvasLayer/TabContainer/Statistiques" unique_id=412850136]
 layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ButtonUppClick" type="Button" parent="CanvasLayer" unique_id=189751916]
 custom_minimum_size = Vector2(150, 50)
