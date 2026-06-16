@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://b7b2tys1ncr2w"]
+
+[ext_resource type="PackedScene" uid="uid://cge6os48vo14u" path="res://Scenes/background.tscn" id="1_bg"]
+[ext_resource type="Script" uid="uid://d18ha2w1kmqwd" path="res://Scripts/title_screen.gd" id="2_ts"]
+[ext_resource type="Script" uid="uid://drkrvsqoxoqkf" path="res://Scripts/settings_panel.gd" id="3_sp"]
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource("2_ts")
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Background" parent="BackgroundLayer" instance=ExtResource("1_bg")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = -150.0
+offset_top = 60.0
+offset_right = 150.0
+offset_bottom = 130.0
+grow_horizontal = 2
+text = "Snakdle"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 64
+
+[node name="SubtitleLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = -150.0
+offset_top = 145.0
+offset_right = 150.0
+offset_bottom = 185.0
+grow_horizontal = 2
+text = ""
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 28
+
+[node name="PlayButton" type="Button" parent="CanvasLayer"]
+custom_minimum_size = Vector2(200, 60)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -30.0
+offset_right = 100.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Jouer"
+
+[node name="SettingsButton" type="Button" parent="CanvasLayer"]
+custom_minimum_size = Vector2(150, 45)
+anchors_preset = -1
+anchor_left = 0.0
+anchor_right = 0.0
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -65.0
+offset_right = 170.0
+offset_bottom = -20.0
+text = "Paramètres"
+
+[node name="SettingsPanel" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -135.0
+offset_right = 160.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+visible = false
+script = ExtResource("3_sp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/SettingsPanel"]
+layout_mode = 2
+
+[node name="MusicLabel" type="Label" parent="CanvasLayer/SettingsPanel/VBoxContainer"]
+layout_mode = 2
+text = "Volume musique"
+
+[node name="MusicSlider" type="HSlider" parent="CanvasLayer/SettingsPanel/VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(280, 30)
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SoundLabel" type="Label" parent="CanvasLayer/SettingsPanel/VBoxContainer"]
+layout_mode = 2
+text = "Volume sons"
+
+[node name="SoundSlider" type="HSlider" parent="CanvasLayer/SettingsPanel/VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(280, 30)
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/SettingsPanel/VBoxContainer"]
+layout_mode = 2
+text = "Fermer"
