@@ -129,6 +129,7 @@ func buy_evasion_upgrade() -> void:
 		evasion_upgrade_cost *= 1.8
 
 func reset_game() -> void:
+	screen_state = "start"
 	money = 0.0
 	money_per_second = 1.0
 	money_per_click = 1.0
