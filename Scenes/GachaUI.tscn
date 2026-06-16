@@ -38,21 +38,6 @@ script = ExtResource("2_xwc5u")
 [node name="GemsLabel" type="Label" parent="VBoxContainer/ColorRect" unique_id=234113938]
 custom_minimum_size = Vector2(150, 35)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer" unique_id=1010270180]
-custom_minimum_size = Vector2(0, 250)
-layout_mode = 2
-size_flags_vertical = 0
-color = Color(0.4949177, 0.5912578, 0.5783053, 1)
-
-[node name="GemsLabel" type="Label" parent="VBoxContainer/ColorRect" unique_id=234113938]
-custom_minimum_size = Vector2(150, 35)
-layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
