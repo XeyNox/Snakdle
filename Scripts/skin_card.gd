@@ -5,6 +5,7 @@ extends Control
 @onready var level_label = $PanelContainer/VBoxContainer/LevelLabel
 @onready var xp_bar      = $PanelContainer/VBoxContainer/XPBar
 @onready var xp_label    = $PanelContainer/VBoxContainer/XPLabel
+@onready var equip_button = $PanelContainer/VBoxContainer/EquipButton
 
 const RARITY_COLORS = {
 	"Common":        Color.WHITE,
@@ -21,8 +22,10 @@ func setup(character: Dictionary) -> void:
 	_char_name = character["name"]
 	name_label.text = character["name"]
 	color_rect.color = RARITY_COLORS[character["rarity"]]
-	_refresh()
+	equip_button.pressed.connect(_on_equip_pressed)
 	GachaManager.collection_updated.connect(_on_collection_updated)
+	GachaManager.skin_equipped.connect(_on_skin_equipped)
+	_refresh()
 
 func _refresh() -> void:
 	var entry = GachaManager.get_entry(_char_name)
@@ -31,10 +34,18 @@ func _refresh() -> void:
 		xp_bar.visible = false
 		xp_label.visible = false
 		color_rect.modulate = Color(0.4, 0.4, 0.4, 1.0)
+		equip_button.text = "Locked"
+		equip_button.disabled = true
 	else:
 		var lvl: int = entry["level"]
 		var xp:  int = entry["xp"]
 		color_rect.modulate = Color.WHITE
+		equip_button.disabled = false
+		if GachaManager.equipped_skin == _char_name:
+			equip_button.text = "Equipped ✓"
+			equip_button.disabled = true
+		else:
+			equip_button.text = "Equip"
 		if lvl >= GachaManager.MAX_LEVEL:
 			level_label.text = "Niv. MAX"
 			xp_bar.visible = true
@@ -51,5 +62,11 @@ func _refresh() -> void:
 			xp_label.visible = true
 			xp_label.text = "%d / %d" % [xp, needed]
 
+func _on_equip_pressed() -> void:
+	GachaManager.equip(_char_name)
+
 func _on_collection_updated() -> void:
+	_refresh()
+
+func _on_skin_equipped(_name: String) -> void:
 	_refresh()

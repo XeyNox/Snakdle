@@ -1,26 +1,22 @@
 extends Node
 
-#Argent
 var money: float = 0.0
 var money_per_second: float = 1.0
 var money_per_click: float = 1.0
 var idle_upgrade_cost: float = 10.0
 var click_upgrade_cost: float = 10.0
 
-#Stats du joueur
 var player_hp: float = 100.0
 var player_max_hp: float = 100.0
 var player_attack: float = 10.0
 var player_defense: float = 5.0
 var player_evasion: float = 0.1
 
-#Cout d'upgrade des stats
 var hp_upgrade_cost: float = 25.0
 var attack_upgrade_cost: float = 25.0
 var defense_upgrade_cost: float = 25.0
 var evasion_upgrade_cost: float = 40.0
 
-#Boss
 var boss_level: int = 1
 var boss_hp: float = 0.0
 var boss_max_hp: float = 0.0
@@ -28,7 +24,6 @@ var boss_active: bool = false
 var _damage_timer: float = 0.0
 const DAMAGE_INTERVAL := 2.0
 
-#Screen and audio
 var screen_state: String = "start"
 var music_volume: float = 1.0
 var sfx_volume: float = 1.0
@@ -42,18 +37,17 @@ signal player_died()
 func _process(delta: float) -> void:
 	if screen_state == "gameover":
 		return
-	money += money_per_second * delta
-
+	var gold_multi = 1.0 + GachaManager.get_bonus("gold_multiplier")
+	money += money_per_second * gold_multi * delta
 	if not boss_active:
 		_start_boss()
-
 	if boss_active:
-		boss_hp -= player_attack * delta
+		var atq_bonus = GachaManager.get_bonus("atq")
+		boss_hp -= (player_attack + atq_bonus) * delta
 		boss_hp_changed.emit(boss_hp, boss_max_hp)
 		if boss_hp <= 0.0:
 			_defeat_boss()
 			return
-
 		_damage_timer += delta
 		if _damage_timer >= DAMAGE_INTERVAL:
 			_damage_timer = 0.0
@@ -77,10 +71,12 @@ func _defeat_boss() -> void:
 	boss_defeated.emit(reward)
 
 func _boss_attack_player() -> void:
-	if randf() < player_evasion:
+	var dodge_bonus = GachaManager.get_bonus("dodge")
+	if randf() < (player_evasion + dodge_bonus):
 		return
+	var def_bonus = GachaManager.get_bonus("def")
 	var raw := float(boss_level) * 12.0 * randf_range(0.7, 1.3)
-	var dmg: float = maxf(1.0, raw - player_defense)
+	var dmg: float = maxf(1.0, raw - (player_defense + def_bonus))
 	player_hp = maxf(0.0, player_hp - dmg)
 	player_hp_changed.emit(player_hp, player_max_hp)
 	if player_hp <= 0.0:
