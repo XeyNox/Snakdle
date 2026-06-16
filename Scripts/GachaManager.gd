@@ -5,12 +5,12 @@ const PULL_COST: int = 10
 const MAX_LEVEL: int = 999
 
 const CHARACTERS = [
-	{ "name": "Goblin",   "rarity": "Common",       "weight": 60, "bonus": { "gold_multiplier": 0.1 } },
-	{ "name": "Archer",   "rarity": "Common",        "weight": 60, "bonus": { "atq": 5.0 } },
-	{ "name": "Knight",   "rarity": "Uncommun",      "weight": 25, "bonus": { "def": 10.0 } },
-	{ "name": "Mage",     "rarity": "Rare",          "weight": 25, "bonus": { "gold_multiplier": 0.25 } },
-	{ "name": "Dragon",   "rarity": "Legendary",     "weight": 8,  "bonus": { "gold_multiplier": 0.5 } },
-	{ "name": "Phoenix",  "rarity": "FrenchMonster", "weight": 2,  "bonus": { "atq": 50.0, "gold_multiplier": 1.0 } },
+	{ "name": "Serpent Gris",   "rarity": "Common",       "weight": 60, "bonus": { "gold_multiplier": 0.1 }, "image":"res://assets/serpent_gris.png" },
+	{ "name": "Serpent Vert",   "rarity": "Uncommon",        "weight": 60, "bonus": { "atq": 5.0 }, "image":"res://assets/serpent_uncommun.png" },
+	{ "name": "Serpent Bleu",   "rarity": "Rare",      "weight": 25, "bonus": { "def": 10.0 }, "image":"res://assets/serpent_rare.png" },
+	{ "name": "Serpent Violet",     "rarity": "Epic",          "weight": 25, "bonus": { "gold_multiplier": 0.25 }, "image":"res://assets/serpent_epic.png" },
+	{ "name": "Serpent Doré",   "rarity": "Legendary",     "weight": 8,  "bonus": { "gold_multiplier": 0.5 }, "image":"res://assets/serpent_gold.png" },
+	{ "name": "Serpent Monstre",  "rarity": "FrenchMonster", "weight": 2,  "bonus": { "atq": 50.0, "gold_multiplier": 1.0 }, "image":"res://assets/serpent_frenchmonster.png" },
 ]
 
 var collection: Dictionary = {}

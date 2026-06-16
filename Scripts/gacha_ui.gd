@@ -3,13 +3,14 @@ extends Control
 @onready var gems_label = $VBoxContainer/ColorRect/GemsLabel
 @onready var pull_button = $VBoxContainer/ColorRect/PullButton
 @onready var result_label = $VBoxContainer/ColorRect/ResultLabel
+@onready var result_image = $VBoxContainer/ColorRect/ResultImage
 @onready var grid = $VBoxContainer/ScrollContainer/GridContainer
 
 const SkinCard = preload("res://Scenes/SkinCard.tscn")
 
 const RARITY_COLORS = {
 	"Common":       Color.WHITE,
-	"Uncommun":     Color(0.3, 0.8, 0.3),
+	"Uncommon":     Color(0.3, 0.8, 0.3),
 	"Rare":         Color(0.3, 0.6, 1.0),
 	"Epic":         Color(0.7, 0.3, 1.0),
 	"Legendary":    Color(1.0, 0.7, 0.0),
@@ -38,8 +39,13 @@ func _on_pull_button_pressed():
 		result_label.modulate = Color.RED
 
 func _on_pull_done(character: Dictionary):
-	result_label.text = "[%s] %s" % [character["rarity"], character["name"]]
+
 	result_label.modulate = RARITY_COLORS[character["rarity"]]
+
+	var tex = load(character["image"])
+	if tex:
+		result_image.texture = tex
+
 	_refresh_collection()
 
 func _on_gems_changed(amount: int):

@@ -9,7 +9,7 @@ extends Control
 
 const RARITY_COLORS = {
 	"Common":        Color.WHITE,
-	"Uncommun":      Color(0.3, 0.8, 0.3),
+	"Uncommon":      Color(0.3, 0.8, 0.3),
 	"Rare":          Color(0.3, 0.6, 1.0),
 	"Epic":          Color(0.7, 0.3, 1.0),
 	"Legendary":     Color(1.0, 0.7, 0.0),
@@ -22,10 +22,24 @@ func setup(character: Dictionary) -> void:
 	_char_name = character["name"]
 	name_label.text = character["name"]
 	color_rect.color = RARITY_COLORS[character["rarity"]]
-	equip_button.pressed.connect(_on_equip_pressed)
-	GachaManager.collection_updated.connect(_on_collection_updated)
-	GachaManager.skin_equipped.connect(_on_skin_equipped)
+
+	# Charger l'image si elle existe
+	if character.has("image"):
+		var tex = load(character["image"])
+		if tex:
+			# Chercher ou créer un TextureRect dans le ColorRect
+			var tr = color_rect.get_node_or_null("TextureRect")
+			if tr == null:
+				tr = TextureRect.new()
+				tr.name = "TextureRect"
+				tr.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+				tr.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+				tr.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+				color_rect.add_child(tr)
+			tr.texture = tex
+
 	_refresh()
+	GachaManager.collection_updated.connect(_on_collection_updated)
 
 func _refresh() -> void:
 	var entry = GachaManager.get_entry(_char_name)

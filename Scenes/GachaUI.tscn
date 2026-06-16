@@ -76,6 +76,11 @@ grow_vertical = 0
 size_flags_horizontal = 8
 text = "Invoquer (10 robux)"
 
+[node name="ResultImage" type="TextureRect" parent="VBoxContainer/ColorRect" unique_id=47999778]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=231507619]
 layout_mode = 2
 size_flags_vertical = 3
