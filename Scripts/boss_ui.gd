@@ -1,8 +1,8 @@
 extends Control
 
-@onready var hp_bar: ProgressBar = $VBox/HPBar
-@onready var boss_label: Label    = $VBox/BossLabel
-@onready var reward_label: Label  = $VBox/RewardLabel
+@onready var hp_bar: ProgressBar = $VBoxContainer/HPBar
+@onready var boss_label: Label = $VBoxContainer/BossLabel
+@onready var reward_label: Label = $VBoxContainer/RewardLabel
 
 func _ready() -> void:
 	GameManager.boss_started.connect(_on_boss_started)

@@ -44,7 +44,7 @@ func _process(delta: float) -> void:
 		return
 	money += money_per_second * delta
 
-	if not boss_active and money >= _boss_threshold():
+	if not boss_active:
 		_start_boss()
 
 	if boss_active:

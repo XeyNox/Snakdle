@@ -6,12 +6,12 @@
 [ext_resource type="Script" uid="uid://b15kwqfo8jd8p" path="res://Scripts/button_upp_idle.gd" id="4_rgh2o"]
 [ext_resource type="Script" uid="uid://bj5ll5xomockr" path="res://Scripts/button_upp_click.gd" id="5_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://cge6os48vo14u" path="res://Scenes/background.tscn" id="6_v1gob"]
-[ext_resource type="PackedScene" uid="uid://dfm70mf3qtc2e" path="res://Scenes/BossUI.tscn" id="8_boss1"]
 [ext_resource type="Script" uid="uid://c8oy70fqu22bn" path="res://Scripts/button_upp_attack.gd" id="9_frkhe"]
 [ext_resource type="Script" uid="uid://b74v6kbf28j5h" path="res://Scripts/button_upp_defense.gd" id="10_1p5hy"]
 [ext_resource type="Script" uid="uid://0folrf6i23bq" path="res://Scripts/go_to_gacha.gd" id="11_grg3l"]
 [ext_resource type="Script" uid="uid://csqcya5fpvv0v" path="res://Scripts/button_upp_hp.gd" id="11_h1m7h"]
 [ext_resource type="Script" uid="uid://c25ksxrt1o2rb" path="res://Scripts/button_upp_evasion.gd" id="12_erwvk"]
+[ext_resource type="Script" uid="uid://cmpith4rdecni" path="res://Scripts/button_go_to_boss.gd" id="12_frkhe"]
 
 [node name="Main" type="Node2D" unique_id=1249350998]
 position = Vector2(452, 224)
@@ -19,10 +19,10 @@ position = Vector2(452, 224)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=544584215]
 
 [node name="TabContainer" type="TabContainer" parent="CanvasLayer" unique_id=325402615]
-offset_left = 948.0
-offset_top = 472.0
-offset_right = 1116.0
-offset_bottom = 624.0
+offset_left = 942.0
+offset_top = 475.0
+offset_right = 1110.0
+offset_bottom = 627.0
 tab_alignment = 1
 current_tab = 0
 script = ExtResource("3_listst")
@@ -57,8 +57,6 @@ vertical_alignment = 1
 
 [node name="Esquive" type="Label" parent="CanvasLayer/TabContainer/Statistiques" unique_id=412850136]
 layout_mode = 2
-
-[node name="BossUi" parent="CanvasLayer" unique_id=929737559 instance=ExtResource("8_boss1")]
 
 [node name="ButtonUppClick" type="Button" parent="CanvasLayer" unique_id=189751916]
 custom_minimum_size = Vector2(150, 50)
@@ -158,6 +156,14 @@ offset_bottom = 31.0
 grow_horizontal = 0
 text = "Go to GACHA"
 script = ExtResource("11_grg3l")
+
+[node name="GoTobossFigth" type="Button" parent="CanvasLayer" unique_id=2023720226]
+offset_left = 14.0
+offset_top = 10.0
+offset_right = 151.0
+offset_bottom = 51.0
+text = "Figth Boss"
+script = ExtResource("12_frkhe")
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=738291847]
 layer = -1
