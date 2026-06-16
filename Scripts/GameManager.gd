@@ -25,6 +25,7 @@ var boss_level: int = 1
 var boss_hp: float = 0.0
 var boss_max_hp: float = 0.0
 var boss_active: bool = false
+var on_boss_page: bool = false
 var _damage_timer: float = 0.0
 const DAMAGE_INTERVAL := 2.0
 
@@ -40,20 +41,22 @@ signal player_hp_changed(hp: float, max_hp: float)
 signal player_died()
 
 func _process(delta: float) -> void:
-	if screen_state == "gameover":
+	# On ne fait tourner la logique de jeu que si le joueur
+	# est réellement sur l'écran de jeu.
+	if screen_state != "playing":
 		return
+
 	money += money_per_second * delta
 
 	if not boss_active:
 		_start_boss()
 
-	if boss_active:
+	if boss_active and on_boss_page:
 		boss_hp -= player_attack * delta
 		boss_hp_changed.emit(boss_hp, boss_max_hp)
 		if boss_hp <= 0.0:
 			_defeat_boss()
 			return
-
 		_damage_timer += delta
 		if _damage_timer >= DAMAGE_INTERVAL:
 			_damage_timer = 0.0
@@ -148,4 +151,5 @@ func reset_game() -> void:
 	boss_hp = 0.0
 	boss_max_hp = 0.0
 	boss_active = false
+	on_boss_page = false
 	_damage_timer = 0.0

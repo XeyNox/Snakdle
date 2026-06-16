@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dfm70mf3qtc2e"]
 
 [ext_resource type="Script" uid="uid://bneuacsj7ycym" path="res://Scripts/boss_ui.gd" id="1_boss1"]
-[ext_resource type="Script" uid="uid://b66di3dhxg6yt" path="res://Scripts/button_go_to_gacha.gd" id="2_ldcqm"]
+[ext_resource type="Script" uid="uid://de7vgahihnub3" path="res://Scenes/go_to_main.gd" id="2_ldcqm"]
 [ext_resource type="Script" uid="uid://cm7q361iaq3q1" path="res://Scripts/listStat.gd" id="2_s3nj4"]
 
 [node name="BossUi" type="Control" unique_id=929737559]
@@ -15,7 +15,13 @@ offset_right = -921.0
 offset_bottom = 13.0
 grow_horizontal = 0
 mouse_filter = 1
-script = ExtResource("1_boss1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=269815477]
+layout_mode = 0
+offset_left = -281.0
+offset_top = -48.0
+offset_right = 944.0
+offset_bottom = 665.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=112837401]
 layout_mode = 1
@@ -25,6 +31,7 @@ anchor_right = 1.0
 offset_left = -220.0
 offset_bottom = 90.0
 grow_horizontal = 0
+script = ExtResource("1_boss1")
 
 [node name="BossLabel" type="Label" parent="VBoxContainer" unique_id=223948512]
 layout_mode = 2
@@ -36,6 +43,8 @@ horizontal_alignment = 1
 [node name="HPBar" type="ProgressBar" parent="VBoxContainer" unique_id=334059623]
 custom_minimum_size = Vector2(200, 20)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 
 [node name="RewardLabel" type="Label" parent="VBoxContainer" unique_id=445160734]
 layout_mode = 2
@@ -50,7 +59,7 @@ offset_left = 714.0
 offset_top = 6.0
 offset_right = 897.0
 offset_bottom = 59.0
-text = "Go to gacha"
+text = "Go to Main"
 script = ExtResource("2_ldcqm")
 
 [node name="TabContainer" type="TabContainer" parent="." unique_id=1664112668]
@@ -70,7 +79,7 @@ metadata/_tab_index = 0
 [node name="HP" type="Label" parent="TabContainer/Statistiques" unique_id=1454611668]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -78,7 +87,7 @@ vertical_alignment = 1
 [node name="Attaque" type="Label" parent="TabContainer/Statistiques" unique_id=1575305167]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -86,10 +95,11 @@ vertical_alignment = 1
 [node name="Défense" type="Label" parent="TabContainer/Statistiques" unique_id=1068672652]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Esquive" type="Label" parent="TabContainer/Statistiques" unique_id=1580146275]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
