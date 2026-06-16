@@ -1,8 +1,8 @@
 extends Control
 
-@onready var gems_label = $VBoxContainer/GemsLabel
-@onready var pull_button = $VBoxContainer/PullButton
-@onready var result_label = $VBoxContainer/ResultLabel
+@onready var gems_label = $VBoxContainer/ColorRect/GemsLabel
+@onready var pull_button = $VBoxContainer/ColorRect/PullButton
+@onready var result_label = $VBoxContainer/ColorRect/ResultLabel
 @onready var grid = $VBoxContainer/ScrollContainer/GridContainer
 
 const SkinCard = preload("res://Scenes/SkinCard.tscn")
