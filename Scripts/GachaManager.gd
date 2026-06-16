@@ -5,12 +5,12 @@ const PULL_COST: int = 10
 const MAX_LEVEL: int = 999
 
 const CHARACTERS = [
-	{ "name": "Serpent Gris",   "rarity": "Common",       "weight": 60, "bonus": { "gold_multiplier": 0.1 }, "image":"res://assets/serpent_gris.png" },
-	{ "name": "Serpent Vert",   "rarity": "Uncommon",        "weight": 60, "bonus": { "atq": 5.0 }, "image":"res://assets/serpent_uncommun.png" },
-	{ "name": "Serpent Bleu",   "rarity": "Rare",      "weight": 25, "bonus": { "def": 10.0 }, "image":"res://assets/serpent_rare.png" },
-	{ "name": "Serpent Violet",     "rarity": "Epic",          "weight": 25, "bonus": { "gold_multiplier": 0.25 }, "image":"res://assets/serpent_epic.png" },
-	{ "name": "Serpent Doré",   "rarity": "Legendary",     "weight": 8,  "bonus": { "gold_multiplier": 0.5 }, "image":"res://assets/serpent_gold.png" },
-	{ "name": "Serpent Monstre",  "rarity": "FrenchMonster", "weight": 2,  "bonus": { "atq": 50.0, "gold_multiplier": 1.0 }, "image":"res://assets/serpent_frenchmonster.png" },
+	{ "name": "Serpent Gris",    "rarity": "Common",        "weight": 50, "bonus": { "atq": 1.0, "def": 1.0 }, "image":"res://assets/serpent_gris.png" },
+	{ "name": "Serpent Vert",    "rarity": "Uncommon",      "weight": 30, "bonus": { "atq": 2.0, "def": 2.0 }, "image":"res://assets/serpent_uncommun.png" },
+	{ "name": "Serpent Bleu",    "rarity": "Rare",          "weight": 11, "bonus": { "atq": 5.0, "def": 5.0, "gold_multiplier": 0.1 }, "image":"res://assets/serpent_rare.png" },
+	{ "name": "Serpent Violet",  "rarity": "Epic",          "weight": 5,  "bonus": { "dodge": 0.01, "atq": 1.0, "def": 5.0 }, "image":"res://assets/serpent_epic.png" },
+	{ "name": "Serpent Doré",    "rarity": "Legendary",     "weight": 3,  "bonus": { "gold_multiplier": 0.5, "atq": 10.0, "hp": 50.0 }, "image":"res://assets/serpent_gold.png" },
+	{ "name": "Serpent Monstre", "rarity": "FrenchMonster", "weight": 1,  "bonus": { "atq": 50.0, "def": 50.0, "dodge": 0.5, "hp": 50.0, "gold_multiplier": 2.5 }, "image":"res://assets/serpent_frenchmonster.png" },
 ]
 
 var collection: Dictionary = {}
