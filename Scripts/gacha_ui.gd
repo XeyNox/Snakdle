@@ -19,7 +19,7 @@ const RARITY_COLORS = {
 func _ready():
 	GachaManager.gems_changed.connect(_on_gems_changed)
 	GachaManager.pull_done.connect(_on_pull_done)
-	pull_button.pressed.connect(_on_pull_button_pressed)
+	#pull_button.pressed.connect(_on_pull_button_pressed)
 	GachaManager.add_gems(5000)
 	_refresh_collection()
 
