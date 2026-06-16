@@ -1,14 +1,30 @@
 extends Node2D
 
-@onready var snake: AnimatedSprite2D = $Snake
-@onready var boss: AnimatedSprite2D  = $Boss
+@onready var snake: Sprite2D = $Snake
+@onready var boss: AnimatedSprite2D = $Boss
+@onready var enemy_manager = $EnemyManager
 
 func _ready() -> void:
 	GameManager.boss_started.connect(_on_boss_started)
 	GameManager.boss_defeated.connect(_on_boss_defeated)
 	GameManager.player_died.connect(_on_player_died)
 	boss.visible = false
-	_play(snake, "walk")
+	_pick_next_target()
+	
+func _pick_next_target() -> void:
+	var vp := get_viewport_rect().size
+	var target_x := randf_range(50.0, vp.x - 50.0)
+	var target_y := randf_range(150.0, vp.y - 100.0)
+	var dist := (Vector2(target_x, target_y) - snake.position).length()
+	var duration := dist / 150.0
+	snake.flip_h = target_x < snake.position.x
+
+	var tween = create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(snake, "position:x", target_x, duration)
+	tween.tween_property(snake, "position:y", target_y, duration)
+	tween.chain().tween_interval(randf_range(0.5, 2.0))
+	tween.chain().tween_callback(_pick_next_target)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") and GameManager.screen_state == "playing":
@@ -17,17 +33,16 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_boss_started(_max_hp: float) -> void:
 	boss.visible = true
-	_play(snake, "attack")
 	_play(boss, "idle")
+	enemy_manager.pause_spawning()
 
 func _on_boss_defeated(_gems: int) -> void:
 	_play(boss, "death")
 	await get_tree().create_timer(1.0).timeout
 	boss.visible = false
-	_play(snake, "walk")
+	enemy_manager.resume_spawning()
 
 func _on_player_died() -> void:
-	_play(snake, "hurt")
 	await get_tree().create_timer(1.0).timeout
 	if is_instance_valid(self):
 		get_tree().change_scene_to_file("res://Scenes/TitleScreen.tscn")
