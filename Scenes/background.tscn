@@ -1,15 +1,10 @@
 [gd_scene format=3 uid="uid://cge6os48vo14u"]
 
 [ext_resource type="Script" uid="uid://8gdscm58a7u" path="res://Scripts/background.gd" id="1_sn1xx"]
-[ext_resource type="Script" path="res://Scripts/game_scene.gd" id="2_gs"]
+[ext_resource type="Script" uid="uid://b3ogajb1mincr" path="res://Scripts/game_scene.gd" id="2_gs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_snake"]
 animations = [{
-"frames": [],
-"loop": true,
-"name": &"walk",
-"speed": 8.0
-}, {
 "frames": [],
 "loop": true,
 "name": &"attack",
@@ -19,18 +14,23 @@ animations = [{
 "loop": false,
 "name": &"hurt",
 "speed": 8.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_boss"]
 animations = [{
 "frames": [],
-"loop": true,
-"name": &"idle",
+"loop": false,
+"name": &"death",
 "speed": 6.0
 }, {
 "frames": [],
-"loop": false,
-"name": &"death",
+"loop": true,
+"name": &"idle",
 "speed": 6.0
 }]
 
@@ -43,8 +43,10 @@ script = ExtResource("1_sn1xx")
 [node name="Snake" type="AnimatedSprite2D" parent="." unique_id=202020202]
 position = Vector2(200, 450)
 sprite_frames = SubResource("SpriteFrames_snake")
+animation = &"walk"
 
 [node name="Boss" type="AnimatedSprite2D" parent="." unique_id=303030303]
+visible = false
 position = Vector2(900, 420)
 sprite_frames = SubResource("SpriteFrames_boss")
-visible = false
+animation = &"idle"

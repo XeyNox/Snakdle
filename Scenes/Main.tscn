@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://b4o480kiumhhj"]
 
-[ext_resource type="Script" path="res://Scripts/label.gd" id="2_kln2b"]
-[ext_resource type="Script" path="res://Scripts/button.gd" id="2_rgh2o"]
+[ext_resource type="Script" uid="uid://buwe6edoa38so" path="res://Scripts/label.gd" id="2_kln2b"]
+[ext_resource type="Script" uid="uid://vjtwj8505nt8" path="res://Scripts/button.gd" id="2_rgh2o"]
 [ext_resource type="Script" uid="uid://cm7q361iaq3q1" path="res://Scripts/listStat.gd" id="3_listst"]
-[ext_resource type="Script" path="res://Scripts/button_upp_idle.gd" id="4_rgh2o"]
-[ext_resource type="Script" path="res://Scripts/button_upp_click.gd" id="5_pbw6q"]
+[ext_resource type="Script" uid="uid://b15kwqfo8jd8p" path="res://Scripts/button_upp_idle.gd" id="4_rgh2o"]
+[ext_resource type="Script" uid="uid://bj5ll5xomockr" path="res://Scripts/button_upp_click.gd" id="5_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://cge6os48vo14u" path="res://Scenes/background.tscn" id="6_v1gob"]
-[ext_resource type="PackedScene" path="res://Scenes/GachaUI.tscn" id="7_jw32o"]
+[ext_resource type="PackedScene" uid="uid://bctnubdqk1sl0" path="res://Scenes/GachaUI.tscn" id="7_jw32o"]
 [ext_resource type="PackedScene" uid="uid://dfm70mf3qtc2e" path="res://Scenes/BossUI.tscn" id="8_boss1"]
 [ext_resource type="Script" uid="uid://c8oy70fqu22bn" path="res://Scripts/button_upp_attack.gd" id="9_frkhe"]
 [ext_resource type="Script" uid="uid://b74v6kbf28j5h" path="res://Scripts/button_upp_defense.gd" id="10_1p5hy"]
@@ -58,16 +58,9 @@ vertical_alignment = 1
 [node name="Esquive" type="Label" parent="CanvasLayer/TabContainer/Statistiques" unique_id=412850136]
 layout_mode = 2
 
-[node name="ButtonUppIdle" type="Button" parent="CanvasLayer" unique_id=463472120]
-custom_minimum_size = Vector2(150, 50)
-anchors_preset = -1
-anchor_left = 0.52
-anchor_top = 1.0
-anchor_right = 0.52
-anchor_bottom = 1.0
-offset_top = -50.0
-text = "Améliorer clics"
-script = ExtResource("4_rgh2o")
+[node name="GachaUi" parent="CanvasLayer" unique_id=627056621 instance=ExtResource("7_jw32o")]
+
+[node name="BossUi" parent="CanvasLayer" unique_id=929737559 instance=ExtResource("8_boss1")]
 
 [node name="ButtonUppClick" type="Button" parent="CanvasLayer" unique_id=189751916]
 custom_minimum_size = Vector2(150, 50)
@@ -77,40 +70,50 @@ anchor_top = 1.0
 anchor_right = 0.35
 anchor_bottom = 1.0
 offset_top = -50.0
-offset_right = 150.0
-text = "Améliorer Idle"
+offset_right = 149.99997
 script = ExtResource("5_pbw6q")
 
-[node name="GachaUi" parent="CanvasLayer" unique_id=627056621 instance=ExtResource("7_jw32o")]
-
-[node name="BossUi" parent="CanvasLayer" unique_id=929737559 instance=ExtResource("8_boss1")]
+[node name="ButtonUppIdle" type="Button" parent="CanvasLayer" unique_id=463472120]
+custom_minimum_size = Vector2(150, 50)
+anchors_preset = -1
+anchor_left = 0.52
+anchor_top = 1.0
+anchor_right = 0.52
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_right = 150.0
+script = ExtResource("4_rgh2o")
 
 [node name="ButtonAttaque" type="Button" parent="CanvasLayer" unique_id=1000475071]
+custom_minimum_size = Vector2(150, 50)
 offset_left = 18.0
 offset_top = 575.0
-offset_right = 26.0
-offset_bottom = 583.0
+offset_right = 168.0
+offset_bottom = 625.0
 script = ExtResource("9_frkhe")
 
 [node name="ButtonDefense" type="Button" parent="CanvasLayer" unique_id=24605850]
+custom_minimum_size = Vector2(150, 50)
 offset_left = 19.0
 offset_top = 495.0
-offset_right = 27.0
-offset_bottom = 503.0
+offset_right = 169.0
+offset_bottom = 545.0
 script = ExtResource("10_1p5hy")
 
 [node name="ButtonHp" type="Button" parent="CanvasLayer" unique_id=825529926]
+custom_minimum_size = Vector2(150, 50)
 offset_left = 19.0
 offset_top = 342.0
-offset_right = 27.0
-offset_bottom = 350.0
+offset_right = 169.0
+offset_bottom = 392.0
 script = ExtResource("11_h1m7h")
 
 [node name="ButtonEsquive" type="Button" parent="CanvasLayer" unique_id=2121783927]
+custom_minimum_size = Vector2(150, 50)
 offset_left = 20.0
 offset_top = 419.0
-offset_right = 28.0
-offset_bottom = 427.0
+offset_right = 170.0
+offset_bottom = 469.0
 script = ExtResource("12_erwvk")
 
 [node name="IdleButton" type="Button" parent="CanvasLayer" unique_id=1183886952]
