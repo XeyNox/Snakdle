@@ -4,19 +4,7 @@
 [ext_resource type="Script" uid="uid://dp561n3jt4ae8" path="res://Scripts/enemy_manager.gd" id="2_4aqey"]
 [ext_resource type="Script" uid="uid://b3ogajb1mincr" path="res://Scripts/game_scene.gd" id="2_gs"]
 [ext_resource type="Texture2D" uid="uid://da1jvj0drjk2p" path="res://assets/serpent_gris.png" id="4_xgxeb"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_boss"]
-animations = [{
-"frames": [],
-"loop": false,
-"name": &"death",
-"speed": 6.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"idle",
-"speed": 6.0
-}]
+[ext_resource type="Texture2D" uid="uid://dc7bh51y46lcy" path="res://assets/aigle_pixel_art.webp" id="5_ltlj5"]
 
 [node name="Background" type="Node2D" unique_id=938921807]
 script = ExtResource("2_gs")
@@ -32,8 +20,7 @@ position = Vector2(200, 450)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_xgxeb")
 
-[node name="Boss" type="AnimatedSprite2D" parent="." unique_id=303030303]
+[node name="Boss" type="Sprite2D" parent="." unique_id=757341752]
 visible = false
 position = Vector2(900, 420)
-sprite_frames = SubResource("SpriteFrames_boss")
-animation = &"idle"
+texture = ExtResource("5_ltlj5")
