@@ -1,2 +1,6 @@
 .superpowers/
 .godot/
+.godot/editor/
+.godot/imported/
+.godot/shader_cache/
+.godot/uid_cache.bin

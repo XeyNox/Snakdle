@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://biecna4bmto1u"]
+
+[ext_resource type="Script" uid="uid://m7d5f6kwsnnv" path="res://Scripts/skin_card.gd" id="1_rqrbj"]
+
+[node name="SkinCard" type="Control" unique_id=789818322]
+custom_minimum_size = Vector2(180, 220)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rqrbj")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1023127659]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1560967451]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/VBoxContainer" unique_id=119615390]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=243703942]
+layout_mode = 2
