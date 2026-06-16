@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://8gdscm58a7u" path="res://Scripts/background.gd" id="1_sn1xx"]
 [ext_resource type="Script" uid="uid://dp561n3jt4ae8" path="res://Scripts/enemy_manager.gd" id="2_4aqey"]
 [ext_resource type="Script" uid="uid://b3ogajb1mincr" path="res://Scripts/game_scene.gd" id="2_gs"]
-[ext_resource type="Texture2D" uid="uid://cvhmfhttd53at" path="res://assets/serpent-corps.jpg" id="4_xgxeb"]
+[ext_resource type="Texture2D" uid="uid://da1jvj0drjk2p" path="res://assets/serpent_gris.png" id="4_xgxeb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_boss"]
 animations = [{
