@@ -22,12 +22,9 @@ func setup(character: Dictionary) -> void:
 	_char_name = character["name"]
 	name_label.text = character["name"]
 	color_rect.color = RARITY_COLORS[character["rarity"]]
-
-	# Charger l'image si elle existe
 	if character.has("image"):
 		var tex = load(character["image"])
 		if tex:
-			# Chercher ou créer un TextureRect dans le ColorRect
 			var tr = color_rect.get_node_or_null("TextureRect")
 			if tr == null:
 				tr = TextureRect.new()
@@ -37,9 +34,10 @@ func setup(character: Dictionary) -> void:
 				tr.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 				color_rect.add_child(tr)
 			tr.texture = tex
-
-	_refresh()
+	equip_button.pressed.connect(_on_equip_pressed)
+	GachaManager.skin_equipped.connect(_on_skin_equipped)
 	GachaManager.collection_updated.connect(_on_collection_updated)
+	_refresh()
 
 func _refresh() -> void:
 	var entry = GachaManager.get_entry(_char_name)
