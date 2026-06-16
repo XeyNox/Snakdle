@@ -36,16 +36,7 @@ text = "Go to Main"
 script = ExtResource("2_xwc5u")
 
 [node name="GemsLabel" type="Label" parent="VBoxContainer/ColorRect" unique_id=234113938]
-custom_minimum_size = Vector2(150, 35)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="GemsLabel2" type="Label" parent="VBoxContainer/ColorRect" unique_id=791955913]
-custom_minimum_size = Vector2(150, 35)
+custom_minimum_size = Vector2(100, 35)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -53,7 +44,7 @@ anchor_right = 1.0
 offset_left = -100.0
 offset_bottom = 35.0
 grow_horizontal = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.029506557, 0.029506557, 0.029506557, 1)
 
 [node name="ResultLabel" type="Label" parent="VBoxContainer/ColorRect" unique_id=2144512603]
 custom_minimum_size = Vector2(0, 150)
@@ -84,12 +75,6 @@ grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 8
 text = "Invoquer (10 robux)"
-
-[node name="ColorRect2" type="ColorRect" parent="VBoxContainer" unique_id=1884864255]
-custom_minimum_size = Vector2(0, 250)
-layout_mode = 2
-size_flags_vertical = 0
-color = Color(0.4949177, 0.5912578, 0.5783053, 1)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=231507619]
 layout_mode = 2
