@@ -36,22 +36,15 @@ signal player_hp_changed(hp: float, max_hp: float)
 signal player_died()
 
 func _process(delta: float) -> void:
-	# On ne fait tourner la logique de jeu que si le joueur
-	# est réellement sur l'écran de jeu.
 	if screen_state != "playing":
 		return
 
-	money += money_per_second * delta
-
-	if not boss_active:
-		_start_boss()
-
-	if boss_active and on_boss_page:
-		boss_hp -= player_attack * delta
 	var gold_multi = 1.0 + GachaManager.get_bonus("gold_multiplier")
 	money += money_per_second * gold_multi * delta
-	if not boss_active:
+
+	if not boss_active and money >= _boss_threshold():
 		_start_boss()
+
 	if boss_active:
 		var atq_bonus = GachaManager.get_bonus("atq")
 		boss_hp -= (player_attack + atq_bonus) * delta
@@ -59,6 +52,7 @@ func _process(delta: float) -> void:
 		if boss_hp <= 0.0:
 			_defeat_boss()
 			return
+
 		_damage_timer += delta
 		if _damage_timer >= DAMAGE_INTERVAL:
 			_damage_timer = 0.0
