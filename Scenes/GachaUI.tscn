@@ -36,7 +36,7 @@ text = "Go to Main"
 script = ExtResource("2_xwc5u")
 
 [node name="GemsLabel" type="Label" parent="VBoxContainer/ColorRect" unique_id=234113938]
-custom_minimum_size = Vector2(100, 35)
+custom_minimum_size = Vector2(150, 35)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
