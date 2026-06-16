@@ -11,7 +11,7 @@ func _ready() -> void:
 	_play(snake, "walk")
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel") and GameManager.screen_state != "gameover":
+	if event.is_action_pressed("ui_cancel") and GameManager.screen_state == "playing":
 		GameManager.screen_state = "pause"
 		get_tree().change_scene_to_file("res://Scenes/TitleScreen.tscn")
 
@@ -29,7 +29,8 @@ func _on_boss_defeated(_gems: int) -> void:
 func _on_player_died() -> void:
 	_play(snake, "hurt")
 	await get_tree().create_timer(1.0).timeout
-	get_tree().change_scene_to_file("res://Scenes/TitleScreen.tscn")
+	if is_instance_valid(self):
+		get_tree().change_scene_to_file("res://Scenes/TitleScreen.tscn")
 
 func _play(sprite: AnimatedSprite2D, anim: String) -> void:
 	if sprite.sprite_frames != null and sprite.sprite_frames.has_animation(anim):
