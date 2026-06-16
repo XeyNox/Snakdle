@@ -1,2 +1,5 @@
+res://Scenes/Main.tscn
+res://Scenes/go_to_gacha.gd
 res://Scenes/GachaUI.tscn
 res://Scripts/gacha_ui.gd
+res://Scenes/go_to_main.gd

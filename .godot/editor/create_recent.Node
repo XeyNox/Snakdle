@@ -1,11 +1,11 @@
+Button
+GridContainer
+ScrollContainer
 Label
 ColorRect
 VBoxContainer
 PanelContainer
 Control
-Button
-GridContainer
-ScrollContainer
 CanvasLayer
 Node
 MeshInstance2D

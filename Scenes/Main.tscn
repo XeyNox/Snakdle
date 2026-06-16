@@ -6,10 +6,10 @@
 [ext_resource type="Script" uid="uid://b15kwqfo8jd8p" path="res://Scripts/button_upp_idle.gd" id="4_rgh2o"]
 [ext_resource type="Script" uid="uid://bj5ll5xomockr" path="res://Scripts/button_upp_click.gd" id="5_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://cge6os48vo14u" path="res://Scenes/background.tscn" id="6_v1gob"]
-[ext_resource type="PackedScene" uid="uid://bctnubdqk1sl0" path="res://Scenes/GachaUI.tscn" id="7_jw32o"]
 [ext_resource type="PackedScene" uid="uid://dfm70mf3qtc2e" path="res://Scenes/BossUI.tscn" id="8_boss1"]
 [ext_resource type="Script" uid="uid://c8oy70fqu22bn" path="res://Scripts/button_upp_attack.gd" id="9_frkhe"]
 [ext_resource type="Script" uid="uid://b74v6kbf28j5h" path="res://Scripts/button_upp_defense.gd" id="10_1p5hy"]
+[ext_resource type="Script" uid="uid://0folrf6i23bq" path="res://Scripts/go_to_gacha.gd" id="11_grg3l"]
 [ext_resource type="Script" uid="uid://csqcya5fpvv0v" path="res://Scripts/button_upp_hp.gd" id="11_h1m7h"]
 [ext_resource type="Script" uid="uid://c25ksxrt1o2rb" path="res://Scripts/button_upp_evasion.gd" id="12_erwvk"]
 
@@ -57,8 +57,6 @@ vertical_alignment = 1
 
 [node name="Esquive" type="Label" parent="CanvasLayer/TabContainer/Statistiques" unique_id=412850136]
 layout_mode = 2
-
-[node name="GachaUi" parent="CanvasLayer" unique_id=627056621 instance=ExtResource("7_jw32o")]
 
 [node name="BossUi" parent="CanvasLayer" unique_id=929737559 instance=ExtResource("8_boss1")]
 
@@ -149,6 +147,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_kln2b")
 metadata/_edit_use_anchors_ = true
+
+[node name="GoToGacha" type="Button" parent="CanvasLayer" unique_id=534856115]
+custom_minimum_size = Vector2(100, 25)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -109.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Go to GACHA"
+script = ExtResource("11_grg3l")
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=738291847]
 layer = -1
