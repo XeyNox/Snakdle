@@ -9,11 +9,15 @@ func _ready() -> void:
 	GameManager.boss_started.connect(_on_boss_started)
 	GameManager.boss_hp_changed.connect(_on_hp_changed)
 	GameManager.boss_defeated.connect(_on_boss_defeated)
+	GameManager.on_boss_page = true
 	if GameManager.boss_active:
 		_on_boss_started(GameManager.boss_max_hp)
 		_on_hp_changed(GameManager.boss_hp, GameManager.boss_max_hp)
 	else:
 		boss_panel.hide()
+
+func _exit_tree() -> void:
+	GameManager.on_boss_page = false
 
 func _on_boss_started(max_hp: float) -> void:
 	hp_bar.max_value = max_hp

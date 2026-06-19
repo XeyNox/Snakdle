@@ -16,7 +16,7 @@ func _ready() -> void:
 	_snake_home = snake.position
 	if GachaManager.equipped_skin != "":
 		_apply_skin(GachaManager.equipped_skin)
-	if GameManager.boss_active:
+	if GameManager.boss_active and GameManager.on_boss_page:
 		_setup_active_boss()
 	else:
 		_pick_next_target()
@@ -50,6 +50,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_tree().change_scene_to_file("res://Scenes/TitleScreen.tscn")
 
 func _on_boss_started(_max_hp: float) -> void:
+	# Le boss n'apparaît que sur la scène secondaire (page de boss).
+	if not GameManager.on_boss_page:
+		return
 	if _movement_tween:
 		_movement_tween.kill()
 	boss.visible = true

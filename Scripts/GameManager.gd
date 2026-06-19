@@ -24,6 +24,8 @@ var boss_active: bool = false
 var on_boss_page: bool = false
 var _damage_timer: float = 0.0
 const DAMAGE_INTERVAL := 2.0
+var _boss_spawn_timer: float = 0.0
+const BOSS_SPAWN_INTERVAL := 30.0
 
 var screen_state: String = "start"
 var music_volume: float = 1.0
@@ -42,10 +44,14 @@ func _process(delta: float) -> void:
 	var gold_multi = 1.0 + GachaManager.get_bonus("gold_multiplier")
 	money += money_per_second * gold_multi * delta
 
-	if not boss_active and money >= _boss_threshold():
-		_start_boss()
+	# Un boss apparaît toutes les 30 secondes (tant qu'aucun n'est actif).
+	if not boss_active:
+		_boss_spawn_timer += delta
+		if _boss_spawn_timer >= BOSS_SPAWN_INTERVAL:
+			_start_boss()
 
-	if boss_active:
+	# Le combat ne se déroule que sur la page de boss (scène secondaire).
+	if boss_active and on_boss_page:
 		var atq_bonus = GachaManager.get_bonus("atq")
 		boss_hp -= (player_attack + atq_bonus) * delta
 		boss_hp_changed.emit(boss_hp, boss_max_hp)
@@ -61,11 +67,18 @@ func _process(delta: float) -> void:
 func _boss_threshold() -> float:
 	return 50.0 * pow(boss_level, 1.5)
 
+# Secondes restantes avant l'apparition du prochain boss (0 si un boss est déjà actif).
+func time_until_next_boss() -> float:
+	if boss_active:
+		return 0.0
+	return maxf(0.0, BOSS_SPAWN_INTERVAL - _boss_spawn_timer)
+
 func _start_boss() -> void:
 	boss_max_hp = _boss_threshold() * 3.0
 	boss_hp = boss_max_hp
 	boss_active = true
 	_damage_timer = 0.0
+	_boss_spawn_timer = 0.0
 	boss_started.emit(boss_max_hp)
 
 func _defeat_boss() -> void:
@@ -151,3 +164,4 @@ func reset_game() -> void:
 	boss_active = false
 	on_boss_page = false
 	_damage_timer = 0.0
+	_boss_spawn_timer = 0.0

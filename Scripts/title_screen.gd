@@ -25,6 +25,7 @@ func _ready() -> void:
 func _on_play_pressed() -> void:
 	if GameManager.screen_state == "gameover":
 		GameManager.reset_game()
+	GameManager.on_boss_page = false
 	GameManager.screen_state = "playing"
 	get_tree().change_scene_to_file("res://Scenes/Main.tscn")
 

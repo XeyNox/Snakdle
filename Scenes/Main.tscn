@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://csqcya5fpvv0v" path="res://Scripts/button_upp_hp.gd" id="11_h1m7h"]
 [ext_resource type="Script" uid="uid://c25ksxrt1o2rb" path="res://Scripts/button_upp_evasion.gd" id="12_erwvk"]
 [ext_resource type="Script" uid="uid://cmpith4rdecni" path="res://Scripts/button_go_to_boss.gd" id="12_frkhe"]
+[ext_resource type="Script" path="res://Scripts/boss_timer_label.gd" id="13_btimer"]
 
 [node name="Main" type="Node2D" unique_id=1249350998]
 position = Vector2(452, 224)
@@ -166,6 +167,17 @@ offset_right = 151.0
 offset_bottom = 51.0
 text = "Figth Boss"
 script = ExtResource("12_frkhe")
+
+[node name="BossTimerLabel" type="Label" parent="CanvasLayer" unique_id=2023720227]
+offset_left = 14.0
+offset_top = 55.0
+offset_right = 214.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+text = "Prochain boss : 30 s"
+script = ExtResource("13_btimer")
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=738291847]
 layer = -1
